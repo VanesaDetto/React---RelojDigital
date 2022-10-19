@@ -1,0 +1,13 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  background-image: url(https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2021/07/regreso-futuro-3-2392211.jpg?itok=vHmSpj_y);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.App {
+  margin-top: 12rem;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Stopwatch.css";
 
 const Stopwatch = () => {
   const [time, setTime] = useState(0);
@@ -19,6 +20,7 @@ const Stopwatch = () => {
   }, [timerOn]);
   return (
     <div className="stopwatch">
+      <h2>Cronometer</h2>
       <h2>
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
         <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
@@ -26,14 +28,24 @@ const Stopwatch = () => {
       </h2>
       <div id="buttons">
         {!timerOn && time === 0 && (
-          <button onClick={() => setTimerOn(true)}>Start</button>
+          <button className="boton" onClick={() => setTimerOn(true)}>
+            Start
+          </button>
         )}
-        {timerOn && <button onClick={() => setTimerOn(false)}>Stop</button>}
-        {!timerOn && time > 0 && (
-          <button onClick={() => setTime(0)}>Reset</button>
+        {timerOn && (
+          <button className="boton-stop" onClick={() => setTimerOn(false)}>
+            Stop
+          </button>
         )}
         {!timerOn && time > 0 && (
-          <button onClick={() => setTimerOn(true)}>Resume</button>
+          <button className="boton-reset" onClick={() => setTime(0)}>
+            Reset
+          </button>
+        )}
+        {!timerOn && time > 0 && (
+          <button className="boton-resumen" onClick={() => setTimerOn(true)}>
+            Resume
+          </button>
         )}
       </div>
     </div>
